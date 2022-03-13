@@ -2,7 +2,7 @@ import { Response, Router } from "express";
 
 import { Route } from "../../../common/types/router.types";
 import { logger } from "../../../logger/logger.service";
-import { IController } from "../../../shared/types/controller";
+import { IController } from "../../../shared/types";
 
 export type ExpressReturnType = Response<unknown, Record<string, unknown>>;
 
