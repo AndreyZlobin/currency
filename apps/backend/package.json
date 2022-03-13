@@ -8,9 +8,11 @@
     "start": "set NODE_ENV=production node index.js",
     "build": "tsc",
     "watch": "nodemon dist/index.js",
-    "lint": "eslint --cache --ext .ts .",
+    "check-types": "tsc",
+    "eslint": "eslint --cache --ext .ts .",
+    "lint": "npm run eslint && npm run check-types",
     "lint:fix": "eslint --cache --ext .ts . --fix",
-    "seed": "npx ts-node -T ./src/shared/seeds/index.ts"
+    "seed": "npx ts-node -T src/docs/database/seeds/index.ts"
   },
   "engines": {
     "node": "^16"

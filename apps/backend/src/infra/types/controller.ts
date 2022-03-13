@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import { Route } from "../../common/types/router.types";
+import { Route } from "./router";
 
 interface IController {
   path: string;

@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 
-import { logger } from "../../logger/logger.service";
+import { logger } from "../../infra/logger/logger.service";
 import { ExceptionFilterInterface } from "./exception.filter.interface";
 import { HTTPError } from "./http.exception";
 

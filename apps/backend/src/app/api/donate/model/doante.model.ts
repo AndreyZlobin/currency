@@ -1,6 +1,6 @@
 import { Schema } from "mongoose";
 
-import { database } from "../../../../database";
+import { database } from "../../../../docs/database";
 import { CurrencyCodeEnum } from "../../currencies/types";
 import { DonateDocument } from "../types";
 

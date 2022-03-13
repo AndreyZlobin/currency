@@ -1,4 +1,4 @@
-import { currencyModel as Model } from "../../app/api/currencies/model";
+import { currencyModel as Model } from "../../../app/api/currencies/model";
 import { createSeed } from "./createSeed";
 
 const seeds = [

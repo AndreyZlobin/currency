@@ -1,6 +1,6 @@
 import { Schema } from "mongoose";
 
-import { database } from "../../../../database";
+import { database } from "../../../../docs/database";
 import { CurrencyDocument } from "../types";
 
 const currencySchema = new Schema<CurrencyDocument>(

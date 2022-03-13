@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 
-import { EnumMethods } from "../../../common/types/router.types";
+import { EnumMethods } from "../../../infra/types";
 import Controller from "../../core/controller/controller.abstract";
 import { CurrencyService } from "./service";
 

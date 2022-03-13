@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 
-import { EnumMethods } from "../../../common/types/router.types";
-import { validatorHandler } from "../../../shared/validators";
+import { EnumMethods } from "../../../infra/types";
+import { validatorHandler } from "../../../infra/validators";
 import Controller from "../../core/controller/controller.abstract";
 import { CreateDonateDto, DonateDto } from "./dto";
 import { DonateService } from "./service";

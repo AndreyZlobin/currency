@@ -1,10 +1,9 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import { DB_CONFIG } from "../../config";
-import { database } from "../../database";
-import { logger } from "../../logger/logger.service";
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
+// @ts-nocheck
+import { DB_CONFIG } from "../../../config";
+import { logger } from "../../../infra/logger/logger.service";
+import { database } from "../index";
+
 export const createSeed = async (Model, seeds, dropCollection = true) => {
   const models = [];
 

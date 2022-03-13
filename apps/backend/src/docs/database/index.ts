@@ -1,6 +1,6 @@
 import { Mongoose } from "mongoose";
 
-import { logger } from "../logger/logger.service";
+import { logger } from "../../infra/logger/logger.service";
 
 const database = new Mongoose();
 

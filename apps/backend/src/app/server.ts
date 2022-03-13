@@ -5,11 +5,11 @@ import expressJSDocSwagger from "express-jsdoc-swagger";
 import { Server } from "http";
 
 import { DB_CONFIG, keys } from "../config";
-import { database } from "../database";
 import { swaggerOptions } from "../docs";
-import { logger } from "../logger/logger.service";
+import { database } from "../docs/database";
+import { logger } from "../infra/logger/logger.service";
+import { IController } from "../infra/types";
 import { getEnv } from "../shared";
-import { IController } from "../shared/types";
 import { ExceptionFilter } from "./exceptions";
 const PREFIX = keys.API_PREFIX as string;
 
