@@ -82,7 +82,7 @@ export class App {
     this.useExceptionFilters();
 
     this.server = this.app.listen(this.port, () => {
-      logger.log(`Server was started on PORT ${this.port}`);
+      logger.log(`[App]: Server was started on PORT ${this.port}`);
     });
   }
 

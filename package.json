@@ -16,18 +16,5 @@
     "server:lint": "npm run lint --prefix apps/backend",
     "server:lint-fix": "npm run lint:fix --prefix apps/backend",
     "server:seed": "npm run seed --prefix apps/backend"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "npm runlint:fix"
-  },
-  "devDependencies": {
-    "husky": "4",
-    "lint-staged": "^12.3.2"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS -g './config/git/commitlint.js'",
-      "pre-push": "npm run lint:fix"
-    }
   }
 }

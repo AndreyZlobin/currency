@@ -31,10 +31,16 @@ class CurrencyController extends Controller {
      *       "rate": 1
      *     }
      * ]
-     * @example response - 400 - fail response example
+     * @example response - 400 - Bad request response
      *    {
      *       "ok": false,
      *       "statusCode": 400,
+     *       "message": "Error"
+     *     }
+     * @example response - 500 - Bad request response
+     *    {
+     *       "ok": false,
+     *       "statusCode": 500,
      *       "message": "Error"
      *     }
      */

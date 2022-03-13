@@ -25,7 +25,7 @@ class DonateController extends Controller {
      * @typedef {object} Response
      * @property {boolean} ok.required
      * @property {integer} statusCode.required
-     * @property {string} message
+     * @property {string} message.required
      */
 
     this.initializeRoutes([
@@ -47,9 +47,27 @@ class DonateController extends Controller {
    * @summary Donate get endpoint
    * @security BasicAuth
    * @tags Donate
-   * @return {array<Donate>} 200 - success response - application/json
-   * @return {Response} 400 - Bad request response - application/json
-   * @return {Response} 500 - Bad request response - application/json
+   * @return {Response} 200 - success response - application/json
+   * @return {Response} 400 - Bad request response
+   * @example response - 200 - success response example
+   * [
+   *     {
+   *       "_id": "uuid",
+   *       "amount": 40,
+   *       "currency": "USD"
+   *     },
+   *     {
+   *        "_id": "uuid",
+   *        "amount": 80.5,
+   *        "currency": "RUB"
+   *      }
+   * ]
+   *@example response - 400 - error response example
+   *     {
+   *       "ok": false,
+   *       "statusCode": 400,
+   *       "message": "Error"
+   *     }
    */
   async getAllDonates(req: Request, res: Response, next: NextFunction): Promise<DonateDto | void> {
     try {
@@ -68,8 +86,18 @@ class DonateController extends Controller {
    * @tags Donate
    * @param {CreateDonate} request.body.required - donate body
    * @return {Response} 201 - success response - application/json
-   * @return {Response} 400 - Bad request response - application/json
-   * @return {Response} 500 - Bad request response - application/json
+   * @return {Response} 400 - Bad request response
+   * @example response - 201 - success response example
+   *     {
+   *       "ok": true,
+   *       "message": "Thank you for your donation!"
+   *     }
+   *@example response - 400 - error response example
+   *     {
+   *       "ok": false,
+   *       "statusCode": 400,
+   *       "message": "Error"
+   *     }
    */
   async createDonate(
     { body }: Request<unknown, unknown, CreateDonateDto>,

@@ -26,7 +26,7 @@
 # Run
 * npm install
 
-* Для запуска сервера ** обязательно** добавить переменные из "apps/server/.env.local" -> "apps/server/.env"
+* Для запуска сервера **обязательно** добавить переменные из "apps/server/.env.local" -> "apps/server/.env"
 
 * Для запуска клиента **обязательно** добавить переменные из "apps/frontend/.env.local" -> "apps/frontend/.env
 
