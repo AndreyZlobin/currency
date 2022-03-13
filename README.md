@@ -40,6 +40,9 @@ npm run server:dev
 npm run frontend:dev
 ```
 
+Форма на клиенте не даст отправить некорректные значения, все тест кейсы можно произвести, например, через POSTMAN
+
+
 ## Swagger
 swagger - http://localhost:5000/api/v1/docs
 
