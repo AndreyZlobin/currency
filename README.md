@@ -6,6 +6,9 @@
     * mongodb
     * swagger
     * openapi-typescript-codegen
+``` 
+node: => 16
+```
 
 # Commands
     * frontend:dev       -   frontend dev server
