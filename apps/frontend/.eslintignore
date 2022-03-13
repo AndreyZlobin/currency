@@ -1,0 +1,6 @@
+/node_nodules
+/dist
+.eslintrc.json
+./src/core/api/index.ts
+/**/__mocks__/*
+/**/*.d.ts

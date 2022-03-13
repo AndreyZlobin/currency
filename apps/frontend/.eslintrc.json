@@ -1,0 +1,101 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": ["airbnb-typescript", "plugin:prettier/recommended"],
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "parserOptions": {
+    "project": "./tsconfig.eslint.json",
+    "createDefaultProgram": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    },
+    "import/extensions": [".js", ".jsx", ".ts", ".tsx"],
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    }
+  },
+  "plugins": [
+    "no-only-tests",
+    "import",
+    "jsx-a11y",
+    "simple-import-sort",
+    "react-hooks",
+    "sonarjs",
+    "react"
+  ],
+  "rules": {
+    "sonarjs/no-identical-expressions": "error",
+    "@typescript-eslint/no-unused-expressions": 0,
+    "sonarjs/cognitive-complexity": 0,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "import/no-extraneous-dependencies": [
+      "error",
+      { "devDependencies": true, "packageDir": ["./"] }
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      "warn"
+    ],
+    "no-multiple-empty-lines": "error",
+    "react/jsx-props-no-spreading": 0,
+    "no-console": ["warn", { "allow": ["info", "warn", "error"] }],
+    "no-only-tests/no-only-tests": "error",
+    "newline-after-var": ["error", "always"],
+    "simple-import-sort/exports": "error",
+    "no-nested-ternary": "off",
+    "space-before-function-paren": 0,
+    "react/prop-types": 0,
+    "react/jsx-handler-names": 0,
+    "react/jsx-fragments": 0,
+    "react/no-unused-prop-types": 0,
+    "import/export": 0,
+    "import/prefer-default-export": 0,
+    "react/require-default-props": 0,
+    "react/react-in-jsx-scope": 0,
+    "react/function-component-definition": 0,
+    "prettier/prettier": ["error", { "singleQuote": true }],
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"],
+        "specialLink": ["to", "hrefLeft", "hrefRight"],
+        "aspects": ["noHref", "invalidHref", "preferButton"]
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+       "newlines-between": "always",
+        "pathGroupsExcludedImportTypes": ["internal"],
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "object",
+          "index"
+        ]
+      }
+    ],
+    "sort-imports": [
+      "error",
+      {
+        "ignoreCase": false,
+        "ignoreDeclarationSort": true,
+        "ignoreMemberSort": false,
+        "memberSyntaxSortOrder": ["none", "all", "multiple", "single"],
+        "allowSeparatedGroups": false
+      }
+    ]
+  }
+}

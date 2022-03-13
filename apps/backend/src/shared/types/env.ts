@@ -1,0 +1,16 @@
+export type Env =
+  | "PORT"
+  | "ADMIN_EMAIL"
+  | "ADMIN_PASS"
+  | "SECRET"
+  | "PATH_TO_PUBLIC"
+  | "BASE_URL"
+  | "PATH_TO_STATIC"
+  | "ECRET_KEY"
+  | "EXPIRES_IN_ACCESS"
+  | "EXPIRES_IN_REFRESH"
+  | "DB_USERNAME"
+  | "DB_PASSWORD"
+  | "DB_HOST"
+  | "DB_PORT"
+  | "DB_NAME";

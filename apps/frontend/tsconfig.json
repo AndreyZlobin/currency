@@ -1,0 +1,74 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "esnext",
+    "moduleResolution": "node",
+    "baseUrl": "./src",
+    "paths": {
+      "@components/*": [
+        "./core/components/*"
+      ],
+      "@utils": [
+        "./core/utils/"
+      ],
+      "@constants/*": [
+        "./core/constants/*"
+      ],
+      "@pages/*": [
+        "./pages/*"
+      ],
+      "@api/*": [
+        "./core/api/*"
+      ],
+      "@core/*": [
+        "./core/*"
+      ],
+      "@assets/*": [
+        "./assets/*"
+      ]
+    },
+    "jsx": "react-jsx",
+    "strictPropertyInitialization": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "removeComments": false,
+    "useDefineForClassFields": true,
+    "allowJs": false,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": false,
+    "noEmit": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": false,
+    "importHelpers": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "lib": [
+      "es7",
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "typeRoots": [
+      "node",
+      "node_modules/@types",
+      "./typings"
+    ],
+    "types": [
+      "vite/client",
+      "vite-plugin-svgr/client",
+    ]
+  },
+  "exclude": [
+    "./src/core/api/index.ts"
+  ],
+  "include": [
+    "*.js",
+    "./**/*.js",
+    "./**/*.ts",
+    "./**/*.tsx",
+  ]
+}
