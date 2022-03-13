@@ -1,13 +1,23 @@
-import { Request, Response } from "express";
-import { ValidationError, validationResult } from "express-validator";
+import { NextFunction, Request, Response } from "express";
+import { SchemaOf, ValidationError } from "yup";
 
-export function validatorHandler(req: Request, res: Response): Response | void {
-  const errorFormatter = ({ location, msg, param }: ValidationError) => {
-    return `${location}[${param}]: ${msg}`;
-  };
-  const errors = validationResult(req).formatWith(errorFormatter);
-
-  if (!errors.isEmpty()) {
-    return res.status(400).json({ ok: false, statusCode: 400, message: errors });
+export const validatorHandler = <T>(schema: SchemaOf<T>) => async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+): Promise<Response | void> => {
+  try {
+    await schema.validate({
+      body: req.body,
+      query: req.query,
+      params: req.params,
+    });
+    return next();
+  } catch (error) {
+    if (error instanceof ValidationError) {
+      return res.status(500).json({ ok: false, statusCode: 400, message: error.message });
+    } else {
+      return res.status(500).json({ ok: false, statusCode: 500, message: "Something went wrong" });
+    }
   }
-}
+};

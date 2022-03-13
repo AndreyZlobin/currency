@@ -1,9 +1,11 @@
 import { NextFunction, Request, Response } from "express";
 
 import { EnumMethods } from "../../../common/types/router.types";
+import { validatorHandler } from "../../../shared/validators";
 import Controller from "../../core/controller/controller.abstract";
 import { CreateDonateDto, DonateDto } from "./dto";
 import { DonateService } from "./service";
+import { createDonateSchema } from "./validations";
 
 class DonateController extends Controller {
   constructor(private readonly donateService = new DonateService()) {
@@ -37,6 +39,7 @@ class DonateController extends Controller {
       {
         path: `${this.path}`,
         method: EnumMethods.post,
+        middleware: [validatorHandler(createDonateSchema)],
         callback: this.createDonate.bind(this),
       },
     ]);
