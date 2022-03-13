@@ -1,4 +1,4 @@
-import keys from "./keys";
+import { keys } from "../keys";
 
 const { DB_HOST, DB_NAME } = keys;
 

@@ -1,4 +1,4 @@
-const keys = {
+export const keys = {
   PORT: process.env.PORT,
   API_PREFIX: process.env.API_PREFIX,
 
@@ -8,5 +8,3 @@ const keys = {
   DB_PORT: process.env.DB_PORT,
   DB_NAME: process.env.DB_NAME,
 };
-
-export default keys;

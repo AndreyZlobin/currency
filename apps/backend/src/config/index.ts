@@ -1,1 +1,2 @@
-export * from "./DB.config";
+export * from "./db";
+export * from "./keys";

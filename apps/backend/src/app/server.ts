@@ -4,8 +4,7 @@ import express, { Express } from "express";
 import expressJSDocSwagger from "express-jsdoc-swagger";
 import { Server } from "http";
 
-import { DB_CONFIG } from "../config";
-import keys from "../config/keys";
+import { DB_CONFIG, keys } from "../config";
 import { database } from "../database";
 import { swaggerOptions } from "../docs";
 import { logger } from "../logger/logger.service";
