@@ -1,5 +1,5 @@
 # Donation service
- ## Make with 
+ ## Made with 
     * typescript
     * express
     * react
