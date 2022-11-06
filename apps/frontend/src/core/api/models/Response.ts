@@ -5,5 +5,5 @@
 export type Response = {
     ok: boolean;
     statusCode: number;
-    message?: string;
+    message: string;
 };

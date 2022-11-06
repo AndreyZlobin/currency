@@ -6,13 +6,13 @@
   ],
   "scripts": {
     "frontend:dev": "npm run dev --prefix apps/frontend",
-    "frontend:build": "npm run start --prefix apps/frontend",
+    "frontend:build": "npm run build --prefix apps/frontend",
     "frontend:lint": "npm run lint --prefix apps/frontend",
     "frontend:lint-fix": "npm run lint:fix --prefix apps/frontend",
     "api-gen": "npm run api-gen --prefix apps/frontend",
     "server:dev": "npm run dev --prefix apps/backend",
     "server:start": "npm run start --prefix apps/backend",
-    "server:build": "npm run start --prefix apps/backend",
+    "server:build": "npm run build --prefix apps/backend",
     "server:lint": "npm run lint --prefix apps/backend",
     "server:lint-fix": "npm run lint:fix --prefix apps/backend",
     "server:seed": "npm run seed --prefix apps/backend"

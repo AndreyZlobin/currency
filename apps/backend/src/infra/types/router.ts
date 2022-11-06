@@ -9,7 +9,9 @@ export enum EnumMethods {
   put = "put",
   patch = "patch",
 }
+
 type Methods = keyof Pick<Router, keyof typeof EnumMethods>;
+
 export interface Route {
   path: string;
   callback: (req: Request, res: Response, next: NextFunction) => void;

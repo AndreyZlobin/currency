@@ -3,7 +3,7 @@ import path from 'path';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 import EnvironmentPlugin from 'vite-plugin-environment';
-import eslintPlugin from 'vite-plugin-eslint';
+// import eslintPlugin from 'vite-plugin-eslint';
 import svgrPlugin from 'vite-plugin-svgr';
 
 import { alias } from './config/aliases';
@@ -15,16 +15,11 @@ import { environments } from './config/environments';
 export default () => {
   return defineConfig({
     plugins: [
+      // @ts-ignore
       EnvironmentPlugin(environments),
       react(),
-      eslintPlugin({
-        cache: false,
-      }),
-      svgrPlugin({
-        svgrOptions: {
-          icon: true,
-        },
-      }),
+      // @ts-ignore
+      svgrPlugin({ svgrOptions: { icon: true } }),
     ],
     resolve: {
       alias: alias.map(({ find, replacement }) => ({

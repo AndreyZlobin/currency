@@ -1,4 +1,4 @@
-import { CurrencyCodeEnum } from "../../currencies/types";
+import { CurrencyCodeEnum } from "@api/currencies/types";
 
 export class CreateDonateDto {
   amount!: number;

@@ -1,17 +1,12 @@
-import { NextFunction, Request, Response } from "express";
+import { logger } from "@src/infra";
+import { Request, Response } from "express";
 
-import { logger } from "../../infra/logger/logger.service";
 import { ExceptionFilterInterface } from "./exception.filter.interface";
-import { HTTPError } from "./http.exception";
+import { HTTPException } from "./http.exception";
 
 export class ExceptionFilter implements ExceptionFilterInterface {
-  public catch(
-    error: Error | HTTPError,
-    req: Request,
-    res: Response,
-    next: NextFunction,
-  ): Response | void {
-    if (error instanceof HTTPError) {
+  public catch(error: Error | HTTPException, req: Request, res: Response): Response | void {
+    if (error instanceof HTTPException) {
       const { context, statusCode, message } = error;
 
       logger.error({

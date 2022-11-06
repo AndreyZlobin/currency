@@ -1,11 +1,10 @@
-import React, { VFC } from 'react';
 import { Box, Button, Typography } from '@mui/material';
 import { CreateDonate } from '@core/api';
 import { useCreateDonate, useFetchCurrencies } from '@core/hooks';
 import { DonateForm } from '@components/DonateForm';
 import { presets } from '@pages/Donate/constants';
 
-export const DonatePage: VFC = () => {
+export const DonatePage = () => {
   const { data: currencies, isLoading, isError, error } = useFetchCurrencies();
 
   const { mutateAsync: createDonate } = useCreateDonate();

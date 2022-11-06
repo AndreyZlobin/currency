@@ -1,7 +1,8 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import { DB_CONFIG } from "../../../config";
-import { logger } from "../../../infra/logger/logger.service";
+import { DB_CONFIG } from "@src/config";
+import { logger } from "@src/infra";
+
 import { database } from "../index";
 
 export const createSeed = async (Model, seeds, dropCollection = true) => {
@@ -36,10 +37,10 @@ export const createSeed = async (Model, seeds, dropCollection = true) => {
         database
           .disconnect()
           .then((res) => {
-            console.log(res);
+            logger.log(res);
           })
           .catch((e) => {
-            console.log(e);
+            logger.error(e);
           });
         process.exit(1);
       }

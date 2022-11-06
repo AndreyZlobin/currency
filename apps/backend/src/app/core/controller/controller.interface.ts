@@ -1,11 +1,8 @@
+import { Route } from "@src/infra";
 import { Router } from "express";
 
-import { Route } from "./router";
-
-interface IController {
+export interface IController {
   path: string;
   router: Router;
   initializeRoutes(routes: Route[]): void;
 }
-
-export { IController };

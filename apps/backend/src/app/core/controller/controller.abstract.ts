@@ -1,7 +1,6 @@
+import { IController } from "@src/app/core";
+import { logger, Route } from "@src/infra";
 import { Response, Router } from "express";
-
-import { logger } from "../../../infra/logger/logger.service";
-import { IController, Route } from "../../../infra/types";
 
 export type ExpressReturnType = Response<unknown, Record<string, unknown>>;
 

@@ -3,10 +3,10 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "target": "esnext",
+    "moduleResolution": "node",
     "module": "commonjs",
     "sourceMap": true,
-    "outDir": "./dist",
-    "rootDir": "./src",
+    "outDir": "dist",
     "allowJs": true,
     "removeComments": true,
     "strict": true,
@@ -14,12 +14,33 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "typeRoots": ["./types/express.d"]
-  },
-    "include": [
-      "src/index.ts"
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noImplicitReturns": true,
+    "baseUrl": "./",
+    "paths": {
+      "@src/*": ["./src/*"],
+      "@core/*": ["./src/app/core/*"],
+      "@api/*": ["./src/app/api/*"],
+      "@infra/*": ["./src/infra/*"],
+      "@test/*": ["./test/*"]
+    },
+    "rootDirs": [
+      "./src",
+      "./test"
     ],
+    "typeRoots": [
+      "./types/express.d"
+    ]
+  },
+  "include": [
+    "./src/**/*.ts"
+  ],
   "exclude": [
-    "./node_modules/",
+    "./node_modules/*",
+    "dist"
   ]
 }

@@ -1,7 +1,7 @@
+import { CurrencyCodeEnum } from "@api/currencies/types";
+import { database } from "@src/infra";
 import { Schema } from "mongoose";
 
-import { database } from "../../../../docs/database";
-import { CurrencyCodeEnum } from "../../currencies/types";
 import { DonateDocument } from "../types";
 
 const donateSchema = new Schema<DonateDocument>(
@@ -11,6 +11,6 @@ const donateSchema = new Schema<DonateDocument>(
   },
   { versionKey: false, collection: "donations" },
 );
-const donationModel = database.model("Donation", donateSchema);
+const donationModel = database.createModel<DonateDocument>("Donation", donateSchema);
 
 export { donationModel };

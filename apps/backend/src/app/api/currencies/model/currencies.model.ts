@@ -1,6 +1,6 @@
+import { database } from "@src/infra";
 import { Schema } from "mongoose";
 
-import { database } from "../../../../docs/database";
 import { CurrencyDocument } from "../types";
 
 const currencySchema = new Schema<CurrencyDocument>(
@@ -13,6 +13,6 @@ const currencySchema = new Schema<CurrencyDocument>(
   { versionKey: false, collection: "currency" },
 );
 
-const currencyModel = database.model("Currency", currencySchema);
+const currencyModel = database.createModel<CurrencyDocument>("Currency", currencySchema);
 
 export { currencyModel };

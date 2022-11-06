@@ -1,10 +1,9 @@
 import React from 'react';
 import { TextField } from '@mui/material';
-import NumberFormat from 'react-number-format';
 import { useController } from 'react-hook-form';
 import { FormInputProps } from '@components/common/Form/FormInputFormat/types';
 
-export function FormInputFormat<T>({
+export function FormInputFormat<T extends object>({
   format,
   ...props
 }: FormInputProps<T> & { format?: string }) {
@@ -16,16 +15,12 @@ export function FormInputFormat<T>({
   const hasError = Boolean(errorMessages);
 
   return (
-    // @ts-ignore
-    <NumberFormat
+    <TextField
       {...props}
-      format={format}
       value={value}
-      inputRef={ref}
+      ref={ref}
       onBlur={onBlur}
-      customInput={TextField}
-      thousandSeparator={true}
-      onValueChange={(c) => onChange(c.floatValue)}
+      onChange={onChange}
       error={hasError}
       helperText={hasError && errorMessages}
     />

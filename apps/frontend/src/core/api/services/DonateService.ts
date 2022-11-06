@@ -2,7 +2,6 @@
 /* tslint:disable */
 /* eslint-disable */
 import type { CreateDonate } from '../models/CreateDonate';
-import type { Donate } from '../models/Donate';
 import type { Response } from '../models/Response';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
@@ -14,16 +13,15 @@ export class DonateService {
 
     /**
      * Donate get endpoint
-     * @returns Donate success response
+     * @returns Response success response
      * @throws ApiError
      */
-    public getApiV1Donate(): CancelablePromise<Array<Donate>> {
+    public getApiV1Donate(): CancelablePromise<Response> {
         return this.httpRequest.request({
             method: 'GET',
             url: '/api/v1/donate',
             errors: {
                 400: `Bad request response`,
-                500: `Bad request response`,
             },
         });
     }
@@ -44,7 +42,6 @@ requestBody: CreateDonate,
             mediaType: 'application/json',
             errors: {
                 400: `Bad request response`,
-                500: `Bad request response`,
             },
         });
     }

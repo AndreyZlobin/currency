@@ -1,6 +1,5 @@
+import { ILogger } from "@src/infra";
 import { Logger } from "tslog";
-
-import { ILogger } from "./logger.interface";
 
 export class LoggerService implements ILogger {
   public logger: Logger;
